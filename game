@@ -1,0 +1,76 @@
+import time
+strength = 0
+intelligence = 0
+dexterity = 0
+health = 1
+maxHealth = health*5
+#while True:
+    #print('''You have 10 points to split between your stats press strength, intelligence, dexterity, and health''')
+    #print("")
+    #strength = input("How many strength points do you want: ")
+    #print("")
+    #intelligence = input("How many intelligence points in do you want: ")
+    #print("")
+    #dexterity = input("How many dexterity points do you want: ")
+    #print("")
+    #health = input("How many health points do you want: ")
+    #print("")
+    #statStrength =  int(strength)
+    #statIntelligence =  int(intelligence)
+    #statDexterity =  int(dexterity)
+    #statHealth =  int(health)
+    #if statStrength+statIntelligence+statDexterity+statHealth > 10:
+        #print("Too many points")
+        #print("")
+    #else:
+        #break;
+print("Your strength is " + str(strength))
+print("Your intelligennce is " + str(intelligence))
+print("Your dexterity is " + str(dexterity))
+print("Your health is " + str(maxHealth))
+print("")
+while maxHealth > 0:
+    time.sleep(5)
+    a = input('''You are lost in the woods and you come across 3 paths
+    1.) leads to a small cabin.
+    2.) leads to a steep mountain.
+    3.) leads to a dark cave.
+    What is your choice: ''')
+    if a == "1":
+        b = input('''You walk up to the cabin and knock on the door and an old woman answers
+        1.) talk to her
+        2.) attack her
+        3.) leave
+        What is your choice: ''')
+        if b == "1":
+            c = input("You say hi I am lost in these woods can you help me")
+            if c == "":
+                print("why yes come in these can be dangerous at night time come in inside")
+        if b == "2":
+            c = input('''What do you use to attack with
+        1.) fist
+        2.) magic
+        What is your choice: ''')
+            if c == "1":
+                print("You punch her but your fist goes through her and she turns you into a frog")
+                maxHealth-=1000
+            if c == "2":
+                print("You wave your arms infront of your face and nothing happen you realize you don't know any magic she turns you into a frog")
+                maxHealth-=1000
+    if a == "2":
+        if dexterity >= 1 and strength >= 1:
+            b = input('''You try to talk up the mountain''')
+        elif strength >=1:
+            b = input('''You slip and fall and land on a rock taking 1 damage but you make it up the mountain''')
+            maxHealth-=1
+        else:
+            b = input("You slip and fall off the cliff")
+            if b == "":
+                maxHealth-=17
+    if a == "3":
+        b = input('''You walk into the cave and you see a light at the other side but you also see a door leading deeper into the cave
+        1.) Walk through the door
+        2.) Walk towards the light
+        3.) leave
+        What is your choice: ''')
+print("You Died!")
